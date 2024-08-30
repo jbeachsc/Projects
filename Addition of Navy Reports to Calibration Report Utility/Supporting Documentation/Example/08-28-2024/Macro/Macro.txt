@@ -1,0 +1,143 @@
+Sub Run_Report()
+    Dim wsSource As Worksheet
+    Dim wsSearch As Worksheet
+    Dim wsTemplate As Worksheet
+    Dim wsInstrument As Worksheet
+    Dim searchRange1 As Range
+    Dim searchRange2 As Range
+    Dim searchRange3 As Range
+    Dim searchRange4 As Range
+    Dim searchRange5 As Range
+    Dim cell As Range
+    Dim searchString As Variant
+    Dim targetValueR As Variant
+    Dim targetValueG As Variant
+    Dim foundRow As Long
+    Dim i As Integer
+    Dim searchValue As String
+    Dim parsedValue As String
+    Dim instrumentCell As Range
+    Dim calReportCell As Range
+    Dim calReportValueD As Variant
+    Dim startPos As Integer
+    Dim endPos As Integer
+    Dim rowOffset As Integer
+    Dim currentCellValue As String
+
+    ' Set the source, search, template, and instrument worksheets
+    Set wsSource = ThisWorkbook.Sheets("Report WorkSheet")
+    Set wsSearch = ThisWorkbook.Sheets("CalReport")
+    Set wsTemplate = ThisWorkbook.Sheets("Report Template")
+    Set wsInstrument = ThisWorkbook.Sheets("Instrument Map")
+    
+    ' Define the search ranges and their corresponding paste ranges
+    Set searchRange1 = wsSource.Range("D10:D19")   ' Paste into B10:B19 and E10:E19
+    Set searchRange2 = wsSource.Range("D22:D35")   ' Paste into B22:B35 and E22:E35
+    Set searchRange3 = wsSource.Range("D38:D46")   ' Paste into B38:B46 and E38:E46
+    Set searchRange4 = wsSource.Range("D49:D52")   ' Paste into B49:B52 and E49:E52
+    Set searchRange5 = wsSource.Range("D55:D61")   ' Paste into B55:B61 and E55:E61
+    
+    ' Process the search ranges
+    ProcessSearchRange searchRange1, wsSearch, wsSource, 10
+    ProcessSearchRange searchRange2, wsSearch, wsSource, 22
+    ProcessSearchRange searchRange3, wsSearch, wsSource, 38
+    ProcessSearchRange searchRange4, wsSearch, wsSource, 49
+    ProcessSearchRange searchRange5, wsSearch, wsSource, 55
+
+    ' Additional Functionality:
+    rowOffset = 64 ' Starting row for multiple search values
+
+    Do
+        ' Retrieve the value from the current row in column C of "Report WorkSheet"
+        currentCellValue = CStr(wsSource.Cells(rowOffset, "C").value)
+        
+        ' Check if the searchValue is empty
+        If Len(currentCellValue) = 0 Then
+            Exit Do
+        End If
+        
+        ' Search for this value in column H of "Instrument Map"
+        Set instrumentCell = wsInstrument.Columns("H").Find(What:=currentCellValue, LookIn:=xlValues, LookAt:=xlPart)
+        
+        If Not instrumentCell Is Nothing Then
+            ' Parse the value between "XT-" and ")"
+            startPos = InStr(instrumentCell.value, "XT-")
+            If startPos > 0 Then
+                startPos = startPos + 3 ' Move past "XT-"
+                endPos = InStr(startPos, instrumentCell.value, ")")
+                If endPos > startPos Then
+                    parsedValue = Mid(instrumentCell.value, startPos, endPos - startPos)
+                    
+                    ' Search for this parsed value in column C of "CalReport"
+                    Set calReportCell = wsSearch.Columns("C").Find(What:=parsedValue, LookIn:=xlValues, LookAt:=xlPart)
+                    
+                    If Not calReportCell Is Nothing Then
+                        ' Paste the entire found cell into D and E of the current row in "Report WorkSheet"
+                        wsSource.Cells(rowOffset, "D").value = calReportCell.value
+                        wsSource.Cells(rowOffset, "E").value = calReportCell.value
+                        ' Also copy the value from column D on the same row into B of the current row
+                        calReportValueD = wsSearch.Cells(calReportCell.Row, "D").value
+                        wsSource.Cells(rowOffset, "B").value = calReportValueD
+                    Else
+                        ' If not found, clear the target cells
+                        wsSource.Cells(rowOffset, "D").value = "Not Found"
+                        wsSource.Cells(rowOffset, "E").value = "Not Found"
+                        wsSource.Cells(rowOffset, "B").value = "Not Found"
+                    End If
+                Else
+                    ' If parsing failed, clear the target cells
+                    wsSource.Cells(rowOffset, "D").value = "Parsing Error"
+                    wsSource.Cells(rowOffset, "E").value = "Parsing Error"
+                    wsSource.Cells(rowOffset, "B").value = "Parsing Error"
+                End If
+            Else
+                ' If "XT-" not found, clear the target cells
+                wsSource.Cells(rowOffset, "D").value = "Not Found"
+                wsSource.Cells(rowOffset, "E").value = "Not Found"
+                wsSource.Cells(rowOffset, "B").value = "Not Found"
+            End If
+        Else
+            ' If not found in "Instrument Map", clear the target cells
+            wsSource.Cells(rowOffset, "D").value = "Not Found"
+            wsSource.Cells(rowOffset, "E").value = "Not Found"
+            wsSource.Cells(rowOffset, "B").value = "Not Found"
+        End If
+        
+        ' Move to the next row
+        rowOffset = rowOffset + 1
+    Loop Until IsEmpty(wsSource.Cells(rowOffset, "C").value)
+    
+    ' Make the "Report Template" sheet active and select cell A1
+    wsTemplate.Activate
+    wsTemplate.Range("A1").Select
+    MsgBox "Report Successfully Compiled", vbInformation
+End Sub
+
+Sub ProcessSearchRange(searchRange As Range, wsSearch As Worksheet, wsSource As Worksheet, startRow As Integer)
+    Dim i As Integer
+    Dim searchString As Variant
+    Dim targetValueR As Variant
+    Dim targetValueG As Variant
+    Dim foundRow As Long
+    Dim cell As Range
+    
+    For i = 1 To searchRange.Rows.Count
+        searchString = searchRange.Cells(i, 1).value
+        foundRow = 0
+        For Each cell In wsSearch.Range("D:D")
+            If InStr(1, cell.value, searchString, vbTextCompare) > 0 Then
+                foundRow = cell.Row
+                targetValueR = wsSearch.Cells(foundRow, "R").value
+                targetValueG = wsSearch.Cells(foundRow, "G").value
+                Exit For
+            End If
+        Next cell
+        If foundRow > 0 Then
+            wsSource.Cells(startRow + i - 1, "B").value = targetValueR
+            wsSource.Cells(startRow + i - 1, "E").value = targetValueG
+        Else
+            wsSource.Cells(startRow + i - 1, "B").value = "Not Found"
+            wsSource.Cells(startRow + i - 1, "E").value = "Not Found"
+        End If
+    Next i
+End Sub
