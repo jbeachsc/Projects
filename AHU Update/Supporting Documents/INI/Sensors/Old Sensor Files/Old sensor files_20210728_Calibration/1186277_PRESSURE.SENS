@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="1186277"
+Manufacturer="Rosemount"
+Type="Pressure"
+Comments="0-45ftH20"
+Cal Date="\00\00\00\00ß\14÷P\00\00\00\00\00\00\00\00"
+Engineering Units="FtH20"
+Conversion String="Poly:(-11.2598075014)(2811.9509731133)(37.9360722984)"
+Sensor Status="Active"

@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="21252073"
+Manufacturer="OMEGA Humidity"
+Type="Pressure"
+Comments="Relative Humidity Inlet"
+Cal Date="\00\00\00\00Þü¶|ö\14à\00\00\00\00\00"
+Engineering Units="%"
+Conversion String="POLY:(-25.000000E+0)(6.250000E+3)"
+Sensor Status="Active"

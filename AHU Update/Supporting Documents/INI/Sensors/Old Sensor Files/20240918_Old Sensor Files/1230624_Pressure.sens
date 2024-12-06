@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="1230624"
+Manufacturer="Rosemount"
+Type="Diff Pressure"
+Comments="0-45ftH2O"
+Cal Date="\00\00\00\00ã!2P\00\00\00\00\00\00\00\00"
+Engineering Units="ftH2O"
+Conversion String="Poly:(-11.2461618198)(2812.5282006818)(68.4360940814)"
+Sensor Status="Active"

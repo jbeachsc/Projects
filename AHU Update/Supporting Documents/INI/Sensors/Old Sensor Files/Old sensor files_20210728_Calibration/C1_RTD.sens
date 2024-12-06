@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="C1"
+Manufacturer="Pyromation"
+Type="RTD"
+Comments="ch1"
+Cal Date="\00\00\00\00ﬁ\0Eú–\00\00\00\00\00\00\00\00"
+Engineering Units="degF"
+Conversion String="Poly:(-409.5617597681)(4.2325826103)(0.0018354850)"
+Sensor Status="Active"

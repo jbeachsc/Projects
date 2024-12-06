@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="08RQV3"
+Manufacturer="Dwyer"
+Type="Device"
+Comments="Relative Humidity"
+Cal Date="\00\00\00\00�̰DÀ\00\00\00\00\00\00"
+Engineering Units="%"
+Conversion String="LINEAR:(0.004000, 0.000000)(0.020000, 100.000000)"
+Sensor Status="Active"

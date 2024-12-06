@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="G48321382"
+Manufacturer="Keyence"
+Type="Flow"
+Comments="FD-R80 Ultrasonic Flowmeter - Conversion Only (No Cal)"
+Cal Date="\00\00\00\00í÷Ù¥,¿0\00\00\00\00\00"
+Engineering Units="gpm"
+Conversion String="POLY:(-30.000000E+0)(7.500000E+3)"
+Sensor Status="Active"

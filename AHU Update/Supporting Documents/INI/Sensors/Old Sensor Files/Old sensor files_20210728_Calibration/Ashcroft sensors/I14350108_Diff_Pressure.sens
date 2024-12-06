@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="I14350108"
+Manufacturer="ASHCROFT_15inH20"
+Type="Diff Pressure"
+Comments="ASHCROFT_15inH20"
+Cal Date="\00\00\00\00› o√\0Eê†\00\00\00\00\00"
+Engineering Units="inH20"
+Conversion String="Poly:(-22.5063406517)(1870.9540087799)(43.8027542319)"
+Sensor Status="Active"

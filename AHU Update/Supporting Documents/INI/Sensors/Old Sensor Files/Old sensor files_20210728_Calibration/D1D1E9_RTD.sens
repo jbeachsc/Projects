@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="D1D1E9"
+Manufacturer="pyromation"
+Type="RTD"
+Comments="CH29"
+Cal Date="\00\00\00\00›’ÏP\00\00\00\00\00\00\00\00"
+Engineering Units="degF"
+Conversion String="Poly:(-409.2252606745)(4.2265262634)(0.0018600396)"
+Sensor Status="Active"

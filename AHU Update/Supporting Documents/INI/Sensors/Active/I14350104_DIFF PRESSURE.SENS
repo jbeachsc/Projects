@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="I14350104"
+Manufacturer="Ashcroft"
+Type="Diff Pressure"
+Comments="-15to15inH2O"
+Cal Date="\00\00\00\00‰\12t–\00\00\00\00\00\00\00\00"
+Engineering Units="inH2O"
+Conversion String="POLY:(-22.558100E+0)(1.868121E+3)"
+Sensor Status="Active"

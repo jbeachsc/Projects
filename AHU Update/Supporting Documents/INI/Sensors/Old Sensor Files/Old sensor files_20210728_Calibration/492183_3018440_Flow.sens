@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="492183_3018440"
+Manufacturer="Micro Motion"
+Type="Flow"
+Comments=""
+Cal Date="\00\00\00\00Ý×=Ð\00\00\00\00\00\00\00\00"
+Engineering Units="gpm"
+Conversion String="POLY:(-125.000000E+0)(31.250000E+3)"
+Sensor Status="Active"

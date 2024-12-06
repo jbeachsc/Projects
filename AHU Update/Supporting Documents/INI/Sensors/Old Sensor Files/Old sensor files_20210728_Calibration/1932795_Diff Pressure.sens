@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="1932795"
+Manufacturer="Rosemount_45ftH20"
+Type="Diff Pressure"
+Comments="Rosemount_45ftH20"
+Cal Date="\00\00\00\00Þ\12‘P\00\00\00\00\00\00\00\00"
+Engineering Units="ftH20"
+Conversion String="Poly:(-11.2363725498)(2809.1407817430)(63.0827665993)"
+Sensor Status="Active"

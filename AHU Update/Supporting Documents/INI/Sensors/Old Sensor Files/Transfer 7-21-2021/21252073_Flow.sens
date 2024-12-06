@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="21252073"
+Manufacturer="OMEGA Humidity"
+Type="Flow"
+Comments="Relative humidity"
+Cal Date="\00\00\00\00Þ\0E%\0Cö\14à\00\00\00\00\00"
+Engineering Units="%"
+Conversion String="LINEAR:(0.004000, 0.000000)(0.020000, 100.000000)"
+Sensor Status="Active"

@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="CHANNEL4"
+Manufacturer="RTD"
+Type="RTD"
+Comments=""
+Cal Date="\00\00\00\00ﬁ\0Eú–\00\00\00\00\00\00\00\00"
+Engineering Units="degF"
+Conversion String="Poly:(-408.9525424615)(4.2262096725)(0.0018535265)"
+Sensor Status="Active"

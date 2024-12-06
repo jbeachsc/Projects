@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="21202917_14653941"
+Manufacturer="Rosemount"
+Type="Flow"
+Comments=""
+Cal Date="\00\00\00\00â¹Ž\1Dxíø\00\00\00\00\00"
+Engineering Units="GPM"
+Conversion String="POLY:(-62.500000E+0)(15.625000E+3)"
+Sensor Status="Active"

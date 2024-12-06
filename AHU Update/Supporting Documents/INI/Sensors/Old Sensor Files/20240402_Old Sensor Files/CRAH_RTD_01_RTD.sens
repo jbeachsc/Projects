@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="CRAH_RTD_01"
+Manufacturer="RTD"
+Type="RTD"
+Comments=""
+Cal Date="\00\00\00\00â(\06Ð\00\00\00\00\00\00\00\00"
+Engineering Units="degF"
+Conversion String="Poly:(-413.4819992080)(4.2950551931)(0.0015894792)"
+Sensor Status="Active"

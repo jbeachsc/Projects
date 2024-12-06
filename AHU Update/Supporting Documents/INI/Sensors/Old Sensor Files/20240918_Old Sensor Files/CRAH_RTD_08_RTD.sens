@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="CRAH_RTD_08"
+Manufacturer="Pyromation"
+Type="RTD"
+Comments=""
+Cal Date="\00\00\00\00„"É–\00\00\00\00\00\00\00\00"
+Engineering Units="degF"
+Conversion String="Poly:(-411.2911254771)(4.2573484637)(0.0017633399)"
+Sensor Status="Active"

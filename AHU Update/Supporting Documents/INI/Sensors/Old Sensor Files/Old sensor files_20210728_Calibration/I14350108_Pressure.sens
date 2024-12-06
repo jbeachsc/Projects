@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="I14350108"
+Manufacturer="Ashcroft"
+Type="Pressure"
+Comments="-15/+15 inH20"
+Cal Date="\00\00\00\00ÞÄ‹Ð\00\00\00\00\00\00\00\00"
+Engineering Units="inH20"
+Conversion String="Poly:(-22.4780110844)(1860.0619780684)(400.6149750710)"
+Sensor Status="Active"

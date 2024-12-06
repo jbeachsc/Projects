@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="464275"
+Manufacturer="Omega"
+Type="Pressure"
+Comments="0-250Psig"
+Cal Date="\00\00\00\00â(\06Ð\00\00\00\00\00\00\00\00"
+Engineering Units="psid"
+Conversion String="Poly:(-62.3287630490)(15595.8088825628)(897.8378578844)"
+Sensor Status="Active"

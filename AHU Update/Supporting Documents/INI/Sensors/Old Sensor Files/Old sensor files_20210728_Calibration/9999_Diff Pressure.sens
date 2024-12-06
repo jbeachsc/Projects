@@ -1,0 +1,9 @@
+[Sensor Data]
+Serial #="9999"
+Manufacturer="asc"
+Type="Diff Pressure"
+Comments=""
+Cal Date="\00\00\00\00Ý{†¹Â\12`\00\00\00\00\00"
+Engineering Units="psia"
+Conversion String="POLY:(-22.500000E+0)(1.875000E+3)"
+Sensor Status="Active"
